@@ -27,29 +27,29 @@
                     <input type="hidden" name="id" value="<%=id%>">
                     <input type="hidden" name="nome" value="<%=nome%>">
                     <label for="" required class="form-control bg-secondary text-light">Título da atividade:</label>
-                    <input type="text" name="titulo" required class="form-control bg" placeholder="Titulo" id="">
+                    <input type="text" name="titulo" required class="form-control bg" placeholder="Titulo" id="" value="<%=alterar.titulo%>">
                     <label for="" class="form-control bg-secondary text-light">Data de entrega:</label>
-                    <input type="date" required name="data" class="form-control" id="">
+                    <input type="date" required name="data" class="form-control" id="" value="<%=alterar.data.toISOString().slice(0,10)%>"
                     <label for="" class="form-control bg-secondary text-light">Tipo:</label>
                     <select name="tipo" class="form-control" id="">
                         <option value="0">selecione...</option>
-                        <option value="ac">AC</option>
-                        <option value="at">AT</option>
-                        <option value="rec">REC</option>
-                        <option value="exame">Exame</option>
+                        <option value="ac" <%=alterar.tipo=="ac"?"selected":""%> >AC</option>
+                        <option value="at"<%=alterar.tipo=="at"?"selected":""%>>AT</option>
+                        <option value="rec"<%=alterar.tipo=="rec"?"selected":""%>>REC</option>
+                        <option value="exame"<%=alterar.tipo=="exame"?"selected":""%>>Exame</option>
                     </select>
                     <label for="" class="form-control bg-secondary text-light"> Orientações</label>
-                    <textarea name="orientacoes" required id="" cols="30" rows="5" class="form-control"></textarea>
+                    <textarea name="orientacoes" required id="" cols="30" rows="5" class="form-control"><%=alterar.instrucoes%></textarea>
                     <label for="" class="form-control bg-secondary text-light">Disciplina</label>
                     <select name="disciplina" class="form-control" id="">
                         <option value="0">selecione disciplina...</option>
-                        <option value="lpl">LPL</option>
-                        <option value="mat">MAT</option>
-                        <option value="bio">BIO</option>
-                        <option value="heg">HeG</option>
-                        <option value="inw">INW</option>
-                        <option value="lp2">LP II</option>
-                        <option value="bd2">BD II</option>
+                        <option value="lpl" <%=alterar.disciplina=="lpl"?"selected":""%>>LPL</option>
+                        <option value="mat"<%=alterar.disciplina=="mat"?"selected":""%>>MAT</option>
+                        <option value="bio"<%=alterar.disciplina=="bio"?"selected":""%>>BIO</option>
+                        <option value="heg"<%=alterar.disciplina=="heg"?"selected":""%>>HeG</option>
+                        <option value="inw"<%=alterar.disciplina=="inw"?"selected":""%>>INW</option>
+                        <option value="lp2"<%=alterar.disciplina=="lp2"?"selected":""%>>LP II</option>
+                        <option value="bd2"<%=alterar.disciplina=="bd2"?"selected":""%>>BD II</option>
                     </select>
                     <label for="" class="form-control bg-secondary text-light"> Forma de Entrga</label>
                         <input type="radio" name="forma" value="Teams" class="form-check-input" id="">Tarefa no Teams  
